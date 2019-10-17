@@ -14,6 +14,7 @@ guess = int(guess)
 print ( guess == gen_number)
 
 #With if statement within a loop
+
 '''
 for i in range(10):
     
