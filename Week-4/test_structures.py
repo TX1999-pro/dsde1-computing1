@@ -23,7 +23,7 @@ class TestSum(unittest.TestCase):
         result = st.first_and_last([0,1,2,3])
         self.assertEqual(result, [0,3])
 
-    def test_part_reverse(selff):
+    def test_part_reverse(self):
         '''
         Test
         '''
@@ -41,51 +41,51 @@ class TestSum(unittest.TestCase):
         '''
         Test palindrome word
         '''
-        resutl = st.palindrome_word("madam")
-        self.asserIs(result, True)
+        result = st.palindrome_word("madam")
+        self.assertIs(result, True)
 
     def test_palindrome_word2(self):
         '''
         Test palindrome word
         '''
-        resutl = st.palindrome_word("Madam")
-        self.asserIs(result, True)
+        result = st.palindrome_word("Madam")
+        self.assertIs(result, True)
 
     def test_palindrome_word3(self):
         '''
         Test palindrome word
         '''
-        resutl = st.palindrome_word("palindrome")
-        self.asserIs(result, False)
+        result = st.palindrome_word("palindrome")
+        self.assertIs(result, False)
 
 
     def test_palindrome_sentence1(self):
         '''
         Test palindrome sentence
         '''
-        resutl = st.palindrome_word("Was it a car or a cat I saw")
-        self.asserIs(result, True)
+        result = st.palindrome_word("Was it a car or a cat I saw")
+        self.assertIs(result, True)
 
     def test_palindrome_sentence2(self):
         '''
         Test palindrome sentence
         '''
-        resutl = st.palindrome_word("Random sentence")
-        self.asserIs(result, False)
+        result = st.palindrome_word("Random sentence")
+        self.assertIs(result, False)
 
     def test_palindrome_sentence3(self):
         '''
         Test palindrome sentence
         '''
-        resutl = st.palindrome_word(" Do geese see God  ")
-        self.asserIs(result, True)
+        result = st.palindrome_word(" Do geese see God  ")
+        self.assertIs(result, True)
 
     def test_concatenate_sentences1(self):
         '''
         Test sentence concatenation
         '''
         result = st.concatenate_sentences("First sentence.", "Second sentence.")
-        self.assertEquual(results, "First sentence. Second sentence.")
+        self.assertEquual(result, "First sentence. Second sentence.")
 
      #def test_concatenate_sentences2(self):
      #   '''
@@ -115,7 +115,7 @@ class TestSum(unittest.TestCase):
         result = st.value_exists({"ind1": "val1", "ind2": "val2"} , "val1")
         self.assertIs(result, True)
 
-    def test_index_exists2(self):
+    def test_value_exists2(self):
         '''
         Test 
         '''
@@ -127,8 +127,8 @@ class TestSum(unittest.TestCase):
         '''
         Test
         '''
-        result = st.merge_dictionaries({"a": 1, "c": 3}, {"b:" 2, "d": 4})
-        self.assertEqual(result, {"a": 1, "c": 3, "b:" 2, "d": 4})
+        result = st.merge_dictionaries({"a": 1, "c": 3}, {"b": 2, "d": 4})
+        self.assertEqual(result, {"a": 1, "c": 3, "b": 2, "d": 4})
 
 
 
