@@ -17,24 +17,31 @@ def first_and_last(the_list):
 # reverse order than in the original "the_list". 
 # If "end" is ?greater? than "beginning" or any of the indices is out of the
 # list, raise a "ValueError" exception. 
+
 def part_reverse(the_list, beginning, end):
-   
     if beginning > end or beginning < 0 or end >= len(the_list):
         raise ValueError
     elif beginning == end:
         return the_list[beginning]
     else:
-        new_list = the_list[beginning:end+1]
-        return  new_list.reverse() 
+        new_list = the_list[beginning:end]
+        new_list.reverse()
+        return  new_list
 
 
 # write a function that at the "index" of "the_list" inserts three times the
 # same value. For example if the_list = [0,1,2,3,4] and index = 3 the function
 # will return [0,1,2,3,3,3,4]. 
 def repeat_at_index(the_list, index):
-    new_list = the_list.insert(index,the_list[index]) # insert the value of the index position at the index position
-    new_list = the_list.insert(index,the_list[index]) # repeat again
+    
+    insert_value = the_list[index]
+    print(insert_value)
+    new_list = the_list.copy()
+    new_list.insert(index, insert_value) # insert the value of the index position at the index position
+    new_list.insert(index, insert_value) # repeat again
+   
     return new_list
+
 
 
 # Strings
@@ -72,13 +79,27 @@ def palindrome_sentence(sentence):
 # or at the end and the must be exactly one space after the end of the first
 # sentence. 
 def concatenate_sentences(sentence1, sentence2):
-    
-        if sentence1[0].isupper() and sentence2[0].isupper(): # check whether the two sentences both starts with a capital letter
-            if sentence1[-1] == "." or sentence1[-1] == "?" or sentence1[-1] == "!":
-                if sentence2[-2] == "." or sentence2[-2] == "?" or sentence2[-2] == "!":
-                    return sentence1 + sentence2
-        else:
-            return False
+    checknote = True 
+    if sentence1[0].isupper() and sentence2[0].isupper(): # check whether the two sentences both starts with a capital letter
+        pass 
+    else:
+        checknote = False 
+
+    if sentence1[-1] == "." or sentence1[-1] == "?" or sentence1[-1] == "!": 
+        pass
+    else:
+        checknote = False
+        
+    if sentence2[-1] == "." or sentence2[-1] == "?" or sentence2[-1] == "!":
+        pass
+    else:
+        checknote = False
+
+    if checknote:
+        return sentence1 + " " + sentence2
+    else:
+        return False
+
 
 
 
