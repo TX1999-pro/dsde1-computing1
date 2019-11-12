@@ -52,9 +52,9 @@ def list_average(the_list, avg_type='mean'):
         number = None
         mode_value = the_list[0]
         mode = [] # to store mode(s)
-        for i in range(len(the_list)):
+        for num in the_list:
             # this iterates through the list
-            a = the_list[i] # store the value of the next number from the reference number
+            a = num # store the value of the next number from the reference number
             if a != number:
                 # if true, a new value is found
                 if the_list.count(a) > the_list.count(mode_value):
@@ -62,7 +62,8 @@ def list_average(the_list, avg_type='mean'):
                     # then re-assign the value to the list of mode and the mode_value
                     mode = [a, ]
                     mode_value = a
-                elif the_list.count(a) == the_list.count(mode_value):
+                # if a different number has the same frequency as the current mode, append that number
+                if the_list.count(a) == the_list.count(mode_value) and a not in mode:
                     # if true, a new mode is found and being added to the list of mode
                     mode.append(a)
                     mode_value = a
